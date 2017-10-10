@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>e-SHOP</title>
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<main>
@@ -12,10 +13,25 @@
 					<th>Імя:</th>
 					<th>Опис:</th>
 					<th>Ціна(грн):</th>
+					<th><button>ADD PRODUCT</button></th>
 				</thead>
 				<tbody>
 				</tbody>
 			</table>
+		</section>
+		<section class="popup">
+			<table>
+				<tbody>
+					<form>
+						<tr><td>Імя:</td><td><input type="text" placeholder="enter name" class="name"></td></tr>
+						<tr><td>Короткий опис:</td><td><input type="text" placeholder="enter description" class="sdescription"></td></tr>
+						<tr><td>Опис:</td><td><input type="text" placeholder="enter description" class="description"></td></tr>
+						<tr><td>Ціна:</td><td><input type="text" placeholder="enter price" class="price"></td></tr>
+					</form>
+				</tbody>
+			</table>
+				<button class="cancel">Відмінити</button>
+				<button class="save">Зберегти</button>
 		</section>
 	</main>
 	<script src="js/data.js"></script>
