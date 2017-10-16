@@ -12,22 +12,43 @@ var elName = document.getElementsByClassName("name")[0],
 init(products);
 
 function init(arr){
-	arr.forEach(function(item){
-		addRow(item);
+	arr.forEach(function(item,index){
+		addRow(item,index);
 	})
 }	
 
-function addRow(obj){
-	var elTr = createInfoInner(obj);
+function addRow(obj,index){
+	var elTr = createInfoInner(obj,index);
 	elTbody.appendChild(elTr);
 }
 
-function createInfoInner(obj){
+function createInfoInner(obj,index){
 	var elTr = document.createElement("tr");
 
-	elTr.innerHTML = "<td>"+obj.name+"</td><td>"+obj.shortDescription+"</td><td>"+obj.price+"</td>";
+	elTr.innerHTML = "<td>"+obj.name+"</td><td>"+obj.shortDescription+"</td><td>"+obj.price+"</td><td><button class='edit'>EDIT</button></td><td><button class='delete'>DELETE</button></td>";
+
+	var elBtnDelete = elTr.querySelector(".delete"),
+		elBtnEdit = elTr.querySelector(".edit");
+
+	elBtnDelete.addEventListener("click", function(){
+		elTbody.removeChild(elTr);
+		products.splice(index,1);
+	});
+
+	elBtnEdit.addEventListener("click", function(){
+		showPopup();
+		elName.value = obj.name;
+		elDescription.value = obj.description;
+		elSdescription.value = obj.shortDescription;
+		elPrice.value = obj.price;
+
+	elBtnSave.addEventListener("click", function(){
+		alert("hi");
+	});
+
+	})
 	return elTr;
-}
+} 
 
 elBtnSave.addEventListener("click", addProduct);
 elBtnAddProduct.addEventListener("click", showPopup);
@@ -60,3 +81,4 @@ function closePopup(){
 	elSdescription.value = "";
 	elPrice.value = "";
 }
+
