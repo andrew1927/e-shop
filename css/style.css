@@ -4,3 +4,10 @@
 .show{
 	display: block;
 }
+.hide{
+	display: none;
+}
+.product-img{
+	width: 150px;
+	height: 100px;
+}

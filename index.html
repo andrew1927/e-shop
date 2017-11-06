@@ -10,7 +10,9 @@
 		<section>
 			<table>
 				<thead>
+					<th></th>
 					<th>Імя:</th>
+					<th>Короткий опис:</th>
 					<th>Опис:</th>
 					<th>Ціна(грн):</th>
 					<th><button>ADD PRODUCT</button></th>
@@ -47,10 +49,18 @@
 									<input type="text" placeholder="enter price" class="price" pattern="^[ 0-9]+$">
 								</td>
 							</tr>
+							<tr>
+								<td>
+									<label for="getimage"></label>
+									<input type="file" id="getimage">
+								</td>
+							</tr>
+
 					</tbody>
 				</table>
 				<button class="cancel">Відмінити</button>
-				<button type="submit" class="save">Зберегти</button>
+				<button type="submit" class="save-product">Зберегти</button>
+				<button type="submit" class="save-edit-product">Зберегти</button>
 			</form>
 		</section>
 	</main>
